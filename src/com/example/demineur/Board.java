@@ -23,10 +23,10 @@ public class Board extends JPanel{
 		for (int i=0; i<16; i++) {
 			for (int j=0; j<9; j++) {
 				g.setColor(Color.gray);
-			if (GUI.mines[i][j]==1) {
+			if (GUI.mines[i][j]== 1){
 					g.setColor(Color.YELLOW);
 				}
-				if (Move.mx>= spacing+i*80 && Move.mx < spacing+i*80+80-2*spacing && Move.my >= spacing+j*80+106 && Move.my < spacing+j*80+186-spacing) {
+				if (Move.mx>= spacing+i*80 && Move.mx < i*80+80-spacing && Move.my >= spacing+j*80+106 && Move.my < spacing+j*80+186-spacing) {
 					g.setColor(Color.RED);
 				}
 				g.fillRect(spacing+i*80,spacing+j*80+80, 80-2*spacing, 80-2*spacing);
