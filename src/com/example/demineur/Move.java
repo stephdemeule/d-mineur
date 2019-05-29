@@ -19,10 +19,8 @@ public class Move implements MouseMotionListener {
 	}
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		System.out.println("The mousse was moved");
 		mx = e.getX();
 		my = e.getY();
-		System.out.println("x: "+mx+" y: "+my);
 	}
 
 }

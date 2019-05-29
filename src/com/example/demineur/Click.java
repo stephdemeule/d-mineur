@@ -1,5 +1,6 @@
 package com.example.demineur;
 
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -10,7 +11,11 @@ public class Click implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("The mousse is clicked");
+		if (inboxX()!= -1 && inboxY() != -1) {
+			System.out.println("The mousse is in the ["+inboxX()+","+inboxY()+"]");
+		}else {
+			System.out.println("The mousse is not inside of anybox");
+		}
 
 	}
 
@@ -33,12 +38,29 @@ public class Click implements MouseListener {
 	}
 
 	@Override
-	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-
+	public void mouseReleased(MouseEvent e) {
 	}
-
-
+	public int inboxX() {
+		for (int i=0; i<16; i++) {
+			for (int j=0; j<9; j++) {
+				if (Move.mx>= Board.spacing+i*80 && Move.mx < Board.spacing+i*80+80-2*Board.spacing && Move.my >= Board.spacing+j*80+106 && Move.my < Board.spacing+j*80+186-Board.spacing) {
+					return i;
+				}
+			}
+		}
+		return -1;
+	}
+	public int inboxY() {
+		for (int i=0; i<16; i++) {
+			for (int j=0; j<9; j++) {
+				if (Move.mx>= Board.spacing+i*80 && Move.mx < Board.spacing+i*80+80-2*Board.spacing && Move.my >= Board.spacing+j*80+106 && Move.my < Board.spacing+j*80+186-Board.spacing) {
+					return j;
+				}
+			}
+		}
+		return -1;
+	}
 }
+
 
 

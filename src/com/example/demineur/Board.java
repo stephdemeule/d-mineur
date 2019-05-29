@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  * Utilisation de la classe Graphic
  */
 public class Board extends JPanel{
-	int spacing = 5;
+	static int spacing = 5;
 	
 	
 	public void paintComponent (Graphics g){
@@ -26,7 +26,7 @@ public class Board extends JPanel{
 			if (GUI.mines[i][j]==1) {
 					g.setColor(Color.YELLOW);
 				}
-				if (Move.mx>= spacing+i*80 && Move.mx < spacing+i*80+80-2*spacing && Move.my >= spacing+j*80+80+26 && Move.my < spacing+j*80+80+80-2*spacing) {
+				if (Move.mx>= spacing+i*80 && Move.mx < spacing+i*80+80-2*spacing && Move.my >= spacing+j*80+106 && Move.my < spacing+j*80+186-spacing) {
 					g.setColor(Color.RED);
 				}
 				g.fillRect(spacing+i*80,spacing+j*80+80, 80-2*spacing, 80-2*spacing);

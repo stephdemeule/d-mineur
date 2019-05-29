@@ -15,6 +15,9 @@ public class GUI extends JFrame{
 	Random rand = new Random();
 	
 	static int [][] mines = new int [16][9];
+	static int [][] neighbours = new int [16][9];
+	boolean [][] revealed = new boolean [16] [9];
+	boolean [][] flagged = new boolean [16] [9];
 	
 	public GUI () {
 		this.setTitle("Démineur");
@@ -31,6 +34,7 @@ public class GUI extends JFrame{
 				else {
 					mines[i][j]=0;
 				}
+				revealed[i][j]=false;
 			}
 		}
 		
