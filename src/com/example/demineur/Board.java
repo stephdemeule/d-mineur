@@ -3,7 +3,6 @@ package com.example.demineur;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import javax.management.MXBean;
 import javax.swing.JPanel;
 
 
@@ -24,6 +23,9 @@ public class Board extends JPanel{
 		for (int i=0; i<16; i++) {
 			for (int j=0; j<9; j++) {
 				g.setColor(Color.gray);
+			if (GUI.mines[i][j]==1) {
+					g.setColor(Color.YELLOW);
+				}
 				if (Move.mx>= spacing+i*80 && Move.mx < spacing+i*80+80-2*spacing && Move.my >= spacing+j*80+80+26 && Move.my < spacing+j*80+80+80-2*spacing) {
 					g.setColor(Color.RED);
 				}

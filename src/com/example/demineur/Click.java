@@ -3,6 +3,9 @@ package com.example.demineur;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * Cette classe gére les clics de souris
+ */
 public class Click implements MouseListener {
 
 	@Override
